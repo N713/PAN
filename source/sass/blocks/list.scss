@@ -1,0 +1,142 @@
+.list {
+    display: flex;
+    align-items: center;
+
+    li {
+        position: relative;
+        font-weight: 700;
+        margin-right: 50px;
+    }
+
+    h3, li {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    h3 {
+        margin-bottom: 6px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 18px;
+        color: $grayLight;
+    }
+
+    &__link {
+        padding: 10px 20px;
+        border-radius: 100px;
+        transition: background-color 0.2s;
+        
+        &:hover {
+            background-color: $grayLight;
+        }
+
+        &:active {
+            background-color: $red;
+        }
+    }
+
+    &__link:hover + .list__sublist {
+        display: block;
+    }
+
+    &__expanded {
+        .list__link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 8px;
+                height: 4px;
+                margin-left: 5px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.2897 1L5.2897 5L9.2897 1' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+                transition: transform 0.2s;
+            }
+        }
+
+        .list__link:hover {
+            &::after {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    &__sublist {
+        padding-top: 25px;
+        position: absolute;
+        left: 0;
+        top: 45px;
+        display: none;
+        
+        ul {
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+
+            &:first-of-type {
+                border-bottom: 1px solid $grayLight;
+            }
+        }
+
+        li {
+            margin-right: 0;
+            min-width: 215px;
+
+            a {
+                display: flex;
+                align-items: flex-start;
+                transition: color 0.2s;
+
+                &:hover {
+                    color: $grayLight;
+                }
+
+                &:active {
+                    color: $red;
+                }
+            }
+
+            svg {
+                margin-right: 10px;
+                position: relative;
+                top: 3px;
+            }
+
+            &:first-of-type {
+                margin-right: 40px;
+            }
+        }
+
+        &:hover {
+            display: block;
+        }
+    }
+
+    &__sublist-inner {
+        background-color: $blackLight;
+        padding: 0 30px; 
+        border-radius: 9px;
+    }
+}
+
+@media(max-width: $breakpoint) {
+    .list {
+        li {
+            margin-right: 20px;
+        }
+
+        &__link {
+            font-size: 14px;
+            line-height: 17px;
+            padding: 5px;
+        }
+    }
+}

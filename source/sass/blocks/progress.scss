@@ -1,0 +1,154 @@
+.progress {
+    padding: 50px 0;
+    margin-bottom: 50px;
+
+    &__inner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__false {
+        margin-bottom: 40px;
+    }
+
+    &__scale {
+        width: 470px;
+        height: 40px;
+        border-radius: 100px;
+        background-color: rgba(143, 149, 172, 0.1);
+        position: relative;
+    }
+
+    &__value {
+        width: 5%;
+        min-width: 40px;
+        height: 40px;
+        background-color: $blackLight;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: $white;
+        transition: width 0.2s;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+
+        button {
+            margin-right: 30px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 18px;
+            max-width: 260px;
+        }
+    }
+
+    &__text {
+        max-width: 595px;
+
+        p {
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 34px;
+            margin-bottom: 15px;
+        }
+
+        p.none {
+            display: none;
+        }
+
+        span {
+            font-size: 14px;
+            line-height: 18px;
+            color: $grayLight;
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            transition: color 0.2s;
+
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 8px;
+                height: 4px;
+                margin-left: 6px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.49438L5 5.49438L9 1.49438' stroke='%238F95AC' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+            }
+
+            &:hover {
+                color: $red;
+            }
+        }
+
+        span.none {
+            display: none;
+        }
+    }
+
+    progress {
+        width: 470px;
+        height: 40px;
+        border-radius: 100px;
+    }
+    progress::-webkit-progress-bar {
+        background-color: $grayLight;
+        border-radius: 100px;
+    }
+    progress::-webkit-progress-value {
+        background-color: $blackLight;
+        border-radius: 100px;
+    }
+    progress::-moz-progress-bar {
+        background-color: $grayLight;
+        border-radius: 100px;
+    }
+}
+
+@media(max-width: $breakpoint) {
+    .progress {
+        padding: 35px 0;
+
+        &__scale {
+            width: 235px;
+        }
+
+        &__text {
+            p {
+                max-width: 250px;
+                font-size: 15px;
+                line-height: 22px;
+            }
+        }
+
+        &__button {
+            button {
+                padding: 20px;
+                max-width: 110px;
+                min-width: 100px;
+                margin-right: 16px;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 18px;
+                max-width: 180px;
+            }
+        }
+
+        .wrapper {
+            padding: 0 40px;
+        }
+    }
+}

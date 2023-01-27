@@ -1,0 +1,35 @@
+.header {
+    background-color: $blackLight;
+    padding: 20px 0;
+    color: $white;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 1510px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+
+    &__button {
+        margin-left: auto;
+        padding: 15px 25px;
+    }
+
+    &__logo {
+        margin-right: 150px;
+    }
+}
+
+@media(max-width: $breakpoint) {
+    .header {
+        &__logo {
+            margin-right: 40px;
+        }
+
+        &__button {
+            max-width: 124px;
+        }
+    }
+}

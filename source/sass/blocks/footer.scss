@@ -1,0 +1,62 @@
+.footer {
+    padding: 40px 0 90px 0;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 18px;
+        max-width: 290px;
+    }
+
+    &__tel {
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 30px;
+        transition: color 0.2s;
+
+        &:hover {
+            color: $red;
+        }
+    }
+
+    &__mail {
+        color: $red;
+        font-size: 14px;
+        line-height: 18px;
+        border-bottom: 1px solid $red;
+        transition: all 0.2s;
+
+        &:hover {
+            color: $grayLight;
+            border-bottom: 1px solid $grayLight;
+        }
+    }
+}
+
+@media(max-width: $breakpoint) {
+    .footer {
+        padding: 20px 0 40px 0;
+
+        .wrapper {
+            padding: 0 40px;
+        }
+
+        p {
+            max-width: 160px;
+        }
+
+        &__inner {
+            align-items: flex-start;
+        }
+
+        &__tel {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+}

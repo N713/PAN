@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+  @include reset();
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: $formular;
+  scroll-behavior: smooth;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 55px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: $white;
+  box-shadow: 0px 4px 20px rgba(143, 149, 172, 0.2);
+  border-radius: 30px;
+  position: absolute;
+  z-index: 100;
+  top: 250px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-repeat: no-repeat;
+  background-size: auto;
+
+  &:hover {
+    background-color: $red;
+  }
+}
+
+.swiper-button-prev {
+  left: -5px;
+  background-position: left 20px center;
+  background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 1.09033L1.5 6.09033L6.5 11.0903' stroke='%232C2E3E' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+}
+
+.swiper-button-next {
+  right: -5px;
+  background-position: left 23px center;
+  background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 11.0903L5.5 6.09033L0.500001 1.09033' stroke='%232C2E3E' stroke-linecap='round'/%3E%3C/svg%3E ");
+}
+
+.swiper-pagination-bullets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.swiper-pagination-bullet {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background-color: $grayLight;
+  transition: background-color 0.2s;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $red;
+}
+
+@media(max-width: $breakpoint) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 125px;
+  }
+
+  .swiper-button-prev {
+    left: 15px;
+  }
+  
+  .swiper-button-next {
+    right: 15px;
+  }
+}

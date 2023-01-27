@@ -1,0 +1,45 @@
+.top {
+    background-color: $blackDark;
+    color: $white;
+    padding-top: 120px;
+    padding-bottom: 170px;
+
+    h2 {
+        max-width: 560px;
+        margin-bottom: 46px;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__info {
+        padding-top: 30px;
+    }
+}
+
+@media(max-width: $breakpoint) {
+    .top {
+        padding-top: 100px;
+        padding-bottom: 130px;
+
+        h2 {
+            font-size: 30px;
+            line-height: 35px;
+            margin-bottom: 30px;
+        }
+
+        &__info {
+            max-width: 295px;
+        }
+
+        &__image {
+            svg {
+                width: 310px;
+                height: 330px;
+            }
+        }
+    }
+}
